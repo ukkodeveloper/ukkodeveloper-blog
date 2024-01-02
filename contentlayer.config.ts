@@ -75,9 +75,10 @@ function createSearchIndex(allBlogs) {
   }
 }
 
+// todo: 타입 지정하는 곳이다. 그러면, mdx 파일 Front Matter은 어떻게 되어 있는가?
 export const Blog = defineDocumentType(() => ({
   name: 'Blog',
-  filePathPattern: 'blog/**/*.mdx',
+  filePathPattern: 'blog/**/*.md',
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
