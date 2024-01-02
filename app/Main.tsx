@@ -3,10 +3,16 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
+import type { CoreContent } from 'pliny/utils/contentlayer'
+import type { Blog } from 'contentlayer/generated'
 
 const MAX_DISPLAY = 5
 
-export default function Home({ posts }) {
+interface Props {
+  posts: CoreContent<Blog>[]
+}
+
+export default function Home({ posts }: Props) {
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">

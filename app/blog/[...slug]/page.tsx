@@ -74,6 +74,7 @@ export async function generateMetadata({
   }
 }
 
+// todo: ? generateStaticParams는 static rendering을 위한 것인가? 모든 path를 pre render하는 것인지.
 export const generateStaticParams = async () => {
   const paths = allBlogs.map((p) => ({ slug: p.slug.split('/') }))
 
