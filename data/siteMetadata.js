@@ -1,4 +1,5 @@
 /** @type {import("pliny/config").PlinyConfig } */
+// TODO: 사이트 메타 데이터 더 변경해야한다.
 const siteMetadata = {
   title: '우코의 개발 블로그',
   author: 'ukko',
