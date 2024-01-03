@@ -1,5 +1,6 @@
 ---
 title: 'Release of Tailwind Nextjs Starter Blog v2.0'
+series: 'React 돌아보기'
 date: '2023-08-05'
 lastmod: '2023-08-05'
 tags: ['next-js', 'tailwind', 'guide', 'feature']

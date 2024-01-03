@@ -2,6 +2,7 @@
 title: Deriving the OLS Estimator
 date: '2020-12-21'
 tags: ['next js', 'math', 'ols']
+series: 'Next13 학습하기'
 draft: false
 summary: 'How to derive the OLS Estimator with matrix notation and a tour of math typesetting using markdown with the help of KaTeX.'
 ---
