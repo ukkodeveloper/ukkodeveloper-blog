@@ -30,7 +30,7 @@ interface LayoutProps {
 }
 
 export default function PostLayout({ content, authorDetails, next, prev, children }: LayoutProps) {
-  const { filePath, path, slug, date, title, tags } = content
+  const { filePath, path, slug, date, title, tags, series } = content
   const basePath = path.split('/')[0]
 
   return (
@@ -120,6 +120,18 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                       {tags.map((tag) => (
                         <Tag key={tag} text={tag} />
                       ))}
+                    </div>
+                  </div>
+                )}
+                {series && (
+                  <div className="py-4 xl:py-8">
+                    <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                      Series
+                    </h2>
+                    <div>
+                      <span className="mr-3 text-sm font-medium text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                        {series}
+                      </span>
                     </div>
                   </div>
                 )}
