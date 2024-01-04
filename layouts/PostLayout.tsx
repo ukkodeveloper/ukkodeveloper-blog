@@ -9,6 +9,8 @@ import Image from '@/components/Image'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import TOCInline from 'pliny/ui/TOCInline'
+import type { Toc } from 'pliny/mdx-plugins'
 
 const editUrl = (path) => `${siteMetadata.siteRepo}/blob/main/data/${path}`
 const discussUrl = (path) =>
@@ -31,7 +33,10 @@ interface LayoutProps {
 
 export default function PostLayout({ content, authorDetails, next, prev, children }: LayoutProps) {
   const { filePath, path, slug, date, title, tags, series } = content
+  const toc = content.toc as unknown as Toc
   const basePath = path.split('/')[0]
+
+  console.log(` 🖨️ [basePath]: `, basePath)
 
   return (
     <SectionContainer>
@@ -110,7 +115,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
               )}
             </div>
             <footer>
-              <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
+              <div className="sticky top-2  divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                 {tags && (
                   <div className="py-4 xl:py-8">
                     <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
@@ -132,6 +137,18 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                       <span className="mr-3 text-sm font-medium text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
                         {series}
                       </span>
+                    </div>
+                  </div>
+                )}
+                {toc && (
+                  <div className="collapse py-4 xl:visible xl:py-8">
+                    <div>
+                      <div className="mt-2 px-3 py-2 text-sm font-medium text-gray-600">
+                        <h2 className="text-md mb-2 uppercase tracking-wide text-gray-900 dark:text-gray-400">
+                          In This Page
+                        </h2>
+                        <TOCInline toc={toc} />
+                      </div>
                     </div>
                   </div>
                 )}
@@ -159,15 +176,6 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                     )}
                   </div>
                 )}
-              </div>
-              <div className="pt-4 xl:pt-8">
-                <Link
-                  href={`/${basePath}`}
-                  className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                  aria-label="Back to the blog"
-                >
-                  &larr; Back to the blog
-                </Link>
               </div>
             </footer>
           </div>
