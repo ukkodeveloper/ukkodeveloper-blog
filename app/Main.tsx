@@ -17,8 +17,8 @@ export default function Home({ posts }: Props) {
   return (
     <>
       <Title title={'Series'} />
+      <Title title={'Articles'} />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <Title title={'Articles'} />
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {

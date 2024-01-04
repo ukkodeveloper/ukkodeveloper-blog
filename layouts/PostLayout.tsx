@@ -36,8 +36,6 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
   const toc = content.toc as unknown as Toc
   const basePath = path.split('/')[0]
 
-  console.log(` 🖨️ [basePath]: `, basePath)
-
   return (
     <SectionContainer>
       <ScrollTopAndComment />
