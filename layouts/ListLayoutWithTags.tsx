@@ -71,7 +71,8 @@ export default function ListLayoutWithTags({
   const pathname = usePathname()
   const tagCounts = tagData as Record<string, number>
   const tagKeys = Object.keys(tagCounts)
-  const sortedTags = tagKeys.sort((a, b) => a.localeCompare(b))
+  const sortedSeries = tagKeys.filter((a) => a[0] === '_').sort((a, b) => a.localeCompare(b))
+  const sortedTags = tagKeys.filter((a) => a[0] !== '_').sort((a, b) => a.localeCompare(b))
 
   const displayPosts = initialDisplayPosts.length > 0 ? initialDisplayPosts : posts
 
@@ -97,6 +98,25 @@ export default function ListLayoutWithTags({
                 </Link>
               )}
               <ul>
+                {sortedSeries.map((t) => {
+                  return (
+                    <li key={t} className="my-3">
+                      {decodeURIComponent(pathname.split('/tags/')[1]) === slug(t) ? (
+                        <h3 className="mx-1 inline items-center rounded-md bg-purple-600 px-2  py-1 text-sm font-bold uppercase text-white ring-1  ring-inset ring-purple-700/10 dark:bg-purple-100 dark:text-primary-700 dark:ring-purple-900/10">
+                          {`${t.slice(1)} (${tagCounts[t]})`}
+                        </h3>
+                      ) : (
+                        <Link
+                          href={`/tags/${slug(t)}`}
+                          className="mx-1 inline items-center rounded-md bg-purple-50 px-2  py-1 text-sm font-medium  uppercase text-gray-500 ring-1 ring-inset ring-purple-700/10 hover:bg-purple-100 dark:bg-purple-800 dark:text-gray-300 dark:hover:bg-purple-600 "
+                          aria-label={`View posts tagged ${t}`}
+                        >
+                          {`${t.slice(1)} (${tagCounts[t]})`}
+                        </Link>
+                      )}
+                    </li>
+                  )
+                })}
                 {sortedTags.map((t) => {
                   return (
                     <li key={t} className="my-3">
