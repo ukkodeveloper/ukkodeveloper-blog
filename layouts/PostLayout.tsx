@@ -35,7 +35,6 @@ interface LayoutProps {
 export default function PostLayout({ content, authorDetails, next, prev, children }: LayoutProps) {
   const { filePath, path, slug, date, title, tags, series } = content
   const toc = content.toc as unknown as Toc
-  const basePath = path.split('/')[0]
 
   return (
     <SectionContainer>
@@ -135,8 +134,8 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                 {toc && (
                   <div className="collapse py-4 xl:visible xl:py-8">
                     <div>
-                      <div className="mt-2 px-3 py-2 text-sm font-medium text-gray-600">
-                        <h2 className="text-md mb-2 uppercase tracking-wide text-gray-900 dark:text-gray-400">
+                      <div className="mt-2 rounded-2xl bg-gray-100 px-3 py-4 text-sm font-medium text-gray-500 dark:bg-gray-900 dark:text-primary-400">
+                        <h2 className="text-md mb-2 uppercase tracking-wide text-gray-900 dark:text-gray-300">
                           In This Page
                         </h2>
                         <TOCInline toc={toc} />
