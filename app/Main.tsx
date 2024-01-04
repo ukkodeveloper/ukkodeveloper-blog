@@ -6,6 +6,7 @@ import NewsletterForm from 'pliny/ui/NewsletterForm'
 import type { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog } from 'contentlayer/generated'
 import Title from '@/components/Title'
+import Image from 'next/image'
 
 const MAX_DISPLAY = 5
 
@@ -24,16 +25,30 @@ export default function Home({ posts }: Props) {
           {posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, date, title, summary, tags } = post
             return (
-              <li key={slug} className="py-12">
+              <li key={slug} className="py-14">
                 <article>
                   <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                    <dl>
-                      <dt className="sr-only">Published on</dt>
-                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
-                      </dd>
-                    </dl>
-                    <div className="space-y-5 xl:col-span-3">
+                    <div>
+                      <br />
+                      {post.image && (
+                        <div className="collapse relative mt-0 h-0 w-0 opacity-80 xl:visible xl:h-52 xl:w-52">
+                          <Image
+                            alt={'something'}
+                            src={post.image}
+                            fill
+                            className={'rounded-md object-cover shadow-md'}
+                          />
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="ml-5 space-y-5 xl:col-span-3">
+                      <dl>
+                        <dt className="sr-only">Published on</dt>
+                        <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                          <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
+                        </dd>
+                      </dl>
                       <div className="space-y-6">
                         <div>
                           <h2 className="text-2xl font-bold leading-8 tracking-tight">

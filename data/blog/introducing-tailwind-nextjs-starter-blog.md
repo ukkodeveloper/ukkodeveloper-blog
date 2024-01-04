@@ -5,7 +5,7 @@ lastmod: '2021-02-01'
 tags: ['_next13 뽀개기','next-js', 'tailwind', 'guide']
 draft: false
 summary: 'Looking for a performant, out of the box template, with all the best in web technology to support your blogging needs? Checkout the Tailwind Nextjs Starter Blog template.'
-images: ['/static/images/canada/mountains.jpg', '/static/images/canada/toronto.jpg']
+image: '/static/images/canada/mountains.jpg'
 authors: ['default', 'sparrowhawk']
 ---
 
