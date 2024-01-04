@@ -95,7 +95,9 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
               </dd>
             </dl>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none pb-8 pt-10 dark:prose-invert">{children}</div>
+              <div className="prose max-w-none pb-8 pt-10 dark:prose-invert xl:ml-8">
+                {children}
+              </div>
               {siteMetadata.comments && (
                 <div
                   className="pb-6 pt-6 text-center text-gray-700 dark:text-gray-300"
@@ -134,7 +136,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                 {toc && (
                   <div className="collapse py-4 xl:visible xl:py-8">
                     <div>
-                      <div className="mt-2 rounded-2xl bg-gray-100 px-3 py-4 text-sm font-medium text-gray-500 dark:bg-gray-900 dark:text-primary-400">
+                      <div className="mt-2 rounded-2xl bg-gray-100 px-5 py-4 text-sm font-medium text-gray-500 dark:bg-gray-900 dark:text-primary-400">
                         <h2 className="text-md mb-2 uppercase tracking-wide text-gray-900 dark:text-gray-300">
                           In This Page
                         </h2>
