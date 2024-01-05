@@ -1,7 +1,5 @@
 import 'css/tailwind.css'
 import 'pliny/search/algolia.css'
-
-import { Space_Grotesk } from 'next/font/google'
 import localFont from 'next/font/local'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import { SearchProvider, SearchConfig } from 'pliny/search'
@@ -11,12 +9,6 @@ import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
-
-const space_grotesk = Space_Grotesk({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-space-grotesk',
-})
 
 const myFont = localFont({
   src: './fonts/GmarketSansTTFMedium.ttf',
