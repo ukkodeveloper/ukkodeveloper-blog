@@ -33,6 +33,7 @@ module.exports = {
           css: {
             a: {
               color: theme('colors.primary.500'),
+              textUnderlineOffset: '0.2rem',
               '&:hover': {
                 color: `${theme('colors.primary.600')}`,
               },
@@ -54,6 +55,7 @@ module.exports = {
           css: {
             a: {
               color: theme('colors.primary.500'),
+              textUnderlineOffset: '0.2rem',
               '&:hover': {
                 color: `${theme('colors.primary.400')}`,
               },

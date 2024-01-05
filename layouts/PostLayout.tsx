@@ -140,7 +140,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                         <h2 className="text-md mb-2 uppercase tracking-wide text-gray-900 dark:text-gray-300">
                           In This Page
                         </h2>
-                        <TOCInline toc={toc} fromHeading={1} toHeading={3}/>
+                        <TOCInline toc={toc} fromHeading={1} toHeading={3} />
                       </div>
                     </div>
                   </div>
