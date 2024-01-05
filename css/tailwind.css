@@ -33,3 +33,11 @@ input:-webkit-autofill:focus {
 .katex-display {
   overflow: auto hidden;
 }
+
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}

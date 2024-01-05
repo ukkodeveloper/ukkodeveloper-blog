@@ -7,8 +7,7 @@ import type { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog } from 'contentlayer/generated'
 import Title from '@/components/Title'
 import Image from 'next/image'
-import { seriesMetas } from './lib/seriesMeta'
-import { CiCircleChevLeft, CiCircleChevRight } from 'react-icons/ci'
+import Carousel from '@/components/Carousel'
 
 const MAX_DISPLAY = 5
 
@@ -20,26 +19,7 @@ export default function Home({ posts }: Props) {
   return (
     <>
       <Title title={'Series'} />
-      <div className="relative mx-auto my-10 flex max-w-3xl items-center">
-        <CiCircleChevLeft color="dark-gray" className="h-8 w-8 flex-shrink-0 md:h-10 md:w-10" />
-        <div className="relative ml-4 h-40 w-40 flex-shrink-0 xl:h-64 xl:w-64">
-          <Image
-            alt=""
-            src={seriesMetas[0].image}
-            fill
-            className="rounded-3xl object-cover opacity-30"
-          />
-        </div>
-
-        <div className="xl: relative right-10 w-full">
-          <h2 className="text-2xl  font-bold  xl:text-3xl">{seriesMetas[0].title}</h2>
-          <p className="collapse my-4 h-0 text-gray-600 dark:text-gray-400 sm:visible sm:h-auto">
-            {seriesMetas[0].description}
-          </p>
-        </div>
-        <CiCircleChevRight className="h-8 w-8 flex-shrink-0 md:h-10 md:w-10" />
-      </div>
-
+      <Carousel />
       <Title title={'Articles'} />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
