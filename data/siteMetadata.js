@@ -1,10 +1,10 @@
 /** @type {import("pliny/config").PlinyConfig } */
 // TODO: 사이트 메타 데이터 더 변경해야한다.
 const siteMetadata = {
-  title: '우코의 개발 블로그',
-  author: 'ukko',
+  title: '개발 낙서',
+  author: '우코',
   headerTitle: 'UKKO DEV.',
-  description: 'A blog created with Next.js and Tailwind.css',
+  description: '개발자 우코의 개발 블로그, 근데 이제 마치 낙서같은',
   language: 'ko-KR',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
