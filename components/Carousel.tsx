@@ -1,22 +1,4 @@
 'use client'
-// {seriesMetas.map((seriesMeta) => (
-//             <div key={seriesMeta.tag} className="my-10 flex items-center bg-cyan-900">
-//               <div className="relative h-40 w-40 flex-shrink-0 xl:h-64 xl:w-64">
-//                 <Image
-//                   alt=""
-//                   src={seriesMeta.image}
-//                   fill
-//                   className="rounded-3xl object-cover opacity-30"
-//                 />
-//               </div>
-//               <div className="relative right-6 w-full xl:right-10">
-//                 <h2 className="text-2xl  font-bold  xl:text-3xl">{seriesMetas[0].title}</h2>
-//                 <p className="collapse my-4 h-0 text-gray-600 dark:text-gray-400 sm:visible sm:h-auto">
-//                   {seriesMeta.description}
-//                 </p>
-//               </div>
-//             </div>
-//           ))}
 
 import { CiCircleChevLeft, CiCircleChevRight } from 'react-icons/ci'
 import Image from 'next/image'
@@ -91,7 +73,7 @@ export default function Carousel() {
         <div className="relative overflow-hidden">
           <div
             ref={carouselContainerRef}
-            className="hide-scroll flex snap-x snap-mandatory overflow-x-auto"
+            className="hide-scroll flex h-fit snap-x snap-mandatory overflow-x-auto overflow-y-hidden"
             onScroll={handleScroll}
           >
             {seriesMetas.map((seriesMeta) => (
