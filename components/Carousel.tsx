@@ -84,7 +84,7 @@ export default function Carousel() {
                 className="my-10 flex min-w-full snap-center items-center justify-center"
               >
                 {/*image 크기를 변경하지 않기 위해 shrink-0. 이를 하지 않으면 이미지부터 줄어들기 시작한다.*/}
-                <div className="relative h-40 w-40 shrink-0  xl:h-64 xl:w-64">
+                <div className="relative h-32 w-32 shrink-0 sm:h-40 sm:w-40 xl:h-64 xl:w-64">
                   <Image
                     alt=""
                     src={seriesMeta.image}
@@ -93,9 +93,11 @@ export default function Carousel() {
                   />
                 </div>
                 {/*자연스럽게 flex-1처럼 적용되는듯하다.*/}
-                <div className="relative right-20 md:right-12 xl:bottom-10 xl:right-12">
-                  <h2 className="text-wrap text-2xl font-bold xl:text-3xl">{seriesMeta.title}</h2>
-                  <p className="text-wrap collapse my-4 h-0 text-gray-600 dark:text-gray-400 sm:visible sm:h-auto">
+                <div className="relative right-12 w-32 sm:w-auto xl:bottom-10">
+                  <h2 className="text-wrap text-xl font-bold sm:text-2xl xl:text-3xl">
+                    {seriesMeta.title}
+                  </h2>
+                  <p className="text-wrap collapse my-4 h-0 text-gray-600 dark:text-gray-400 sm:visible sm:h-auto xl:text-xl">
                     {seriesMeta.description}
                   </p>
                 </div>

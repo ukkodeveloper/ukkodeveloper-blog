@@ -75,13 +75,14 @@ export default function ListLayoutWithTags({
   const sortedTags = tagKeys.filter((a) => a[0] !== '_').sort((a, b) => a.localeCompare(b))
 
   const displayPosts = initialDisplayPosts.length > 0 ? initialDisplayPosts : posts
+  const titleText = title[0] === '_' ? `⭔ ${title.slice(1)}` : title
 
   return (
     <>
       <div>
         <div className="pb-6 pt-6">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:hidden sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            {title}
+          <h1 className="sm:ml-8` text-2xl font-extrabold leading-9 tracking-tight text-gray-900  dark:text-gray-100 md:text-3xl md:leading-10 xl:text-4xl xl:leading-12">
+            {titleText}
           </h1>
         </div>
         <div className="flex sm:space-x-4">
@@ -154,7 +155,7 @@ export default function ListLayoutWithTags({
                       </dl>
                       <div className="space-y-3">
                         <div>
-                          <h2 className="text-2xl font-bold leading-8 tracking-tight">
+                          <h2 className="text-xl font-bold leading-8 tracking-tight md:text-2xl">
                             <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
                               {title}
                             </Link>
@@ -163,7 +164,7 @@ export default function ListLayoutWithTags({
                             {tags?.map((tag) => <Tag key={tag} text={tag} />)}
                           </div>
                         </div>
-                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                        <div className="prose max-w-none text-sm text-gray-500 dark:text-gray-400 md:text-lg">
                           {summary}
                         </div>
                       </div>
