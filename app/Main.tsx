@@ -2,7 +2,6 @@ import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
-import NewsletterForm from 'pliny/ui/NewsletterForm'
 import type { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog } from 'contentlayer/generated'
 import Title from '@/components/Title'
@@ -73,7 +72,7 @@ export default function Home({ posts }: Props) {
                         className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                         aria-label={`Read more: "${title}"`}
                       >
-                        Read more &rarr;
+                        더 보기 &rarr;
                       </Link>
                     </div>
                   </div>
@@ -93,11 +92,6 @@ export default function Home({ posts }: Props) {
           >
             All Posts &rarr;
           </Link>
-        </div>
-      )}
-      {siteMetadata.newsletter?.provider && (
-        <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
         </div>
       )}
     </>

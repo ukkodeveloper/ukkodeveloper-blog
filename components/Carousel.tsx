@@ -61,62 +61,60 @@ export default function Carousel() {
   }
 
   return (
-    <div>
-      <div className="my-2 flex items-center justify-between md:my-10">
-        <button onClick={scrollLeft}>
-          <CiCircleChevLeft
-            color="dark-gray"
-            className="mx-4 h-8 w-8 flex-shrink-0 md:mx-8 md:h-10 md:w-10"
-          />
-        </button>
+    <div className="my-4 flex items-center justify-between sm:my-6 sm:h-auto md:my-10 md:my-8 xl:my-10">
+      <button onClick={scrollLeft}>
+        <CiCircleChevLeft
+          color="dark-gray"
+          className="mx-4 h-8 w-8 flex-shrink-0 md:mx-8 md:h-10 md:w-10"
+        />
+      </button>
 
-        <div className="relative overflow-hidden">
-          <div
-            ref={carouselContainerRef}
-            className="hide-scroll flex h-fit snap-x snap-mandatory overflow-x-auto overflow-y-hidden"
-            onScroll={handleScroll}
-          >
-            {seriesMetas.map((seriesMeta) => (
-              // min-w-full을 해줘야하는 이유는? w-full을 하면 스크롤이 생기지 않고 현재 width에서 여러개의 아이템이 뭉쳐서보인다.
-              <Link
-                href={`/tags/${seriesMeta.tag}`}
-                key={seriesMeta.tag}
-                className="my-10 flex min-w-full snap-center items-center justify-center"
-              >
-                {/*image 크기를 변경하지 않기 위해 shrink-0. 이를 하지 않으면 이미지부터 줄어들기 시작한다.*/}
-                <div className="relative h-32 w-32 shrink-0 sm:h-40 sm:w-40 xl:h-64 xl:w-64">
-                  <Image
-                    alt=""
-                    src={seriesMeta.image}
-                    fill
-                    className="rounded-3xl object-cover opacity-40"
-                  />
-                </div>
-                {/*자연스럽게 flex-1처럼 적용되는듯하다.*/}
-                <div className="relative right-12 w-32 sm:w-auto xl:bottom-10">
-                  <h2 className="text-wrap text-xl font-bold sm:text-2xl xl:text-3xl">
-                    {seriesMeta.title}
-                  </h2>
-                  <p className="text-wrap collapse my-4 h-0 text-gray-600 dark:text-gray-400 sm:visible sm:h-auto xl:text-xl">
-                    {seriesMeta.description}
-                  </p>
-                </div>
-              </Link>
-            ))}
-            <div className="absolute bottom-4 right-4 flex w-16 items-center justify-center gap-2 rounded-md bg-gray-300 px-2 py-1 text-gray-800 opacity-80 dark:bg-gray-700 dark:text-gray-300 xl:w-20 xl:px-3 xl:py-1.5 xl:text-lg">
-              <span>{currentIndex + 1}</span>
-              <span>/</span>
-              <span>{itemCounts}</span>
-            </div>
+      <div className="relative overflow-hidden">
+        <div
+          ref={carouselContainerRef}
+          className="hide-scroll flex snap-x snap-mandatory overflow-x-auto overflow-y-hidden"
+          onScroll={handleScroll}
+        >
+          {seriesMetas.map((seriesMeta) => (
+            // min-w-full을 해줘야하는 이유는? w-full을 하면 스크롤이 생기지 않고 현재 width에서 여러개의 아이템이 뭉쳐서보인다.
+            <Link
+              href={`/tags/${seriesMeta.tag}`}
+              key={seriesMeta.tag}
+              className="flex min-w-full snap-center items-center justify-center"
+            >
+              {/*image 크기를 변경하지 않기 위해 shrink-0. 이를 하지 않으면 이미지부터 줄어들기 시작한다.*/}
+              <div className="relative h-32 w-32 shrink-0 sm:h-40 sm:w-40 xl:h-64 xl:w-64">
+                <Image
+                  alt=""
+                  src={seriesMeta.image}
+                  fill
+                  className="rounded-3xl object-cover opacity-40"
+                />
+              </div>
+              {/*자연스럽게 flex-1처럼 적용되는듯하다.*/}
+              <div className="relative right-12 sm:w-auto xl:bottom-10">
+                <h2 className="text-wrap text-md  font-bold sm:text-2xl xl:text-3xl">
+                  {seriesMeta.title}
+                </h2>
+                <p className="text-wrap collapse my-4 h-0 text-gray-600 dark:text-gray-400 sm:visible sm:h-auto xl:text-xl">
+                  {seriesMeta.description}
+                </p>
+              </div>
+            </Link>
+          ))}
+          <div className="absolute bottom-4 right-4 flex w-16 items-center justify-center gap-2 rounded-md bg-gray-300 px-1 py-1 text-xs text-gray-800 opacity-80 dark:bg-gray-700 dark:text-gray-300 sm:px-2 sm:py-1 xl:w-20 xl:px-3 xl:py-1.5 xl:text-lg">
+            <span>{currentIndex + 1}</span>
+            <span>/</span>
+            <span>{itemCounts}</span>
           </div>
         </div>
-        <button onClick={scrollRight}>
-          <CiCircleChevRight
-            className="mx-4 h-8 w-8 flex-shrink-0 md:mx-10 md:h-10 md:w-10"
-            onClick={scrollRight}
-          />
-        </button>
       </div>
+      <button onClick={scrollRight}>
+        <CiCircleChevRight
+          className="mx-4 h-8 w-8 flex-shrink-0 md:mx-10 md:h-10 md:w-10"
+          onClick={scrollRight}
+        />
+      </button>
     </div>
   )
 }
