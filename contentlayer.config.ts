@@ -114,7 +114,7 @@ export const Blog = defineDocumentType(() => ({
 
 export const Authors = defineDocumentType(() => ({
   name: 'Authors',
-  filePathPattern: 'authors/**/*.md',
+  filePathPattern: 'authors/**/*.mdx',
   contentType: 'mdx',
   fields: {
     name: { type: 'string', required: true },
@@ -131,7 +131,7 @@ export const Authors = defineDocumentType(() => ({
 }))
 
 export default makeSource({
-  contentDirPath: '/',
+  contentDirPath: 'data',
   documentTypes: [Blog, Authors],
   mdx: {
     cwd: process.cwd(),

@@ -1,11 +1,12 @@
 ---
-title: '2023-12-08'
+title: 'Release of Tailwind Nextjs Starter Blog v2.0'
 series: 'React 돌아보기'
 date: '2023-08-05'
 lastmod: '2023-08-05'
-tags: ['_ukko', 'next-js', 'tailwind', 'guide', ]
+tags: ['next-js', 'tailwind', 'guide', 'feature']
+draft: false
 summary: 'Release of Tailwind Nextjs Starter Blog template v2.0, refactored with Nextjs App directory and React Server Components setup.Discover the new features and how to migrate from V1.'
-image: '/blog/images/avatar.png'
+image: '/static/images/twitter-card.png'
 ---
 
 ## Introduction
@@ -15,12 +16,6 @@ Welcome to the release of Tailwind Nextjs Starter Blog template v2.0. This relea
 <TOCInline toc={props.toc} exclude="Introduction" />
 
 ## V1 to V2
-### 한글입니다.
-한글입니다.한글입니다.한글입니다.한글입니다.한글입니다.한글입니다.한글입니다.한글입니다.한글입니다.한글입니다.한글입니다.한글입니다.한글입니다.한글입니다.한글입니다.한글입니다.한글입니다.한글입니다.한글입니다.한글입니다.
-
-Version 2 builds on the success of the previous version and introduces many new features and improvements. The codebase has been refactored to support Next.js App directory and React Server Components. Markdown / MDX is now processed using Contentlayer, a type-safe content SDK that validates and transforms your content into type-safe JSON data. It integrates with Pliny, a new library that provides out of the box Next.js components to enhance your static site with analytics, comments and newsletter subscription. A new command palette (⌘-k) search component is also added to the template.
-
-Let's dive into the new features and improvements in V2.
 
 ![Github Traffic](/static/images/github-traffic.png)
 
@@ -90,30 +85,30 @@ A large reason for the popularity of the template was its customizability and in
 To solve this, I have abstracted the logic to a separate repository - [Pliny](https://github.com/timlrx/pliny). Pliny provides out of the box Next.js components to enhance static sites:
 
 - Analytics
-    - Google Analytics
-    - Plausible Analytics
-    - Simple Analytics
-    - Umami Analytics
-    - Posthog
+  - Google Analytics
+  - Plausible Analytics
+  - Simple Analytics
+  - Umami Analytics
+  - Posthog
 - Comments
-    - Disqus
-    - Giscus
-    - Utterances
+  - Disqus
+  - Giscus
+  - Utterances
 - Newsletter (uses Next 13 API Routes)
-    - Buttondown
-    - Convertkit
-    - Email Octopus
-    - Klaviyo
-    - Mailchimp
-    - Revue
+  - Buttondown
+  - Convertkit
+  - Email Octopus
+  - Klaviyo
+  - Mailchimp
+  - Revue
 - Command palette search with tailwind style sheet
-    - Algolia
-    - Kbar (local search)
+  - Algolia
+  - Kbar (local search)
 - UI utility components
-    - Bleed
-    - Newsletter / Blog Newsletter
-    - Pre / Code block
-    - Table of Contents
+  - Bleed
+  - Newsletter / Blog Newsletter
+  - Pre / Code block
+  - Table of Contents
 
 Choose your preferred service by modifying `siteMetadata.js` and changing the appropriate fields. For example to change from Umami Analytics to Plausible, we can change the following fields:
 
@@ -127,15 +122,6 @@ analytics: {
 +      plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
 +    },
 },
-```
-
-
-```diff-js:siteMetadata.js
-- hello
-- new year
-+ fuck
-+ you
-+ bitch
 ```
 
 Changes in the configuration file gets propagated to the components automatically. No modification to the template is required.
