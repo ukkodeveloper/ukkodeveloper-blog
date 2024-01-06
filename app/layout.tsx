@@ -11,8 +11,18 @@ import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 
 const myFont = localFont({
-  src: './fonts/GmarketSansTTFMedium.ttf',
+  src: [
+    {
+      path: './fonts/GmarketSansTTFBold.ttf',
+      weight: '700',
+    },
+    {
+      path: './fonts/GmarketSansTTFMedium.ttf',
+      weight: '500',
+    },
+  ],
   display: 'block',
+  variable: '--font-gmarket-sans',
 })
 
 export const metadata: Metadata = {
