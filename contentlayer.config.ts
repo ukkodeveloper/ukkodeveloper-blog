@@ -131,7 +131,7 @@ export const Authors = defineDocumentType(() => ({
 }))
 
 export default makeSource({
-  contentDirPath: 'data',
+  contentDirPath: '/',
   documentTypes: [Blog, Authors],
   mdx: {
     cwd: process.cwd(),
